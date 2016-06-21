@@ -13,7 +13,7 @@ $(function(){
 	$.ajax({
 		type: "get",
 		data: {categoryName: "关于我们"},
-		url: "http://localhost:49566/api/HomeAPI/getList",
+		url: "http://210.83.195.229:8088/api/HomeAPI/getList",
 		success: function(data) {
 			console.log(data);
 			$("#owl-demo").find(".fist-slide").html(template("aboutUS",data));
