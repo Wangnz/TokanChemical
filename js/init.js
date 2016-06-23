@@ -12,11 +12,33 @@ $(function(){
 	
 	$.ajax({
 		type: "get",
-		data: {categoryName: "关于我们"},
+		data: { status: "批准" },
 		url: "http://210.83.195.229:8088/api/HomeAPI/getList",
+		async: false,
 		success: function(data) {
-			console.log(data);
-			$("#owl-demo").find(".fist-slide").html(template("aboutUS",data));
+			if (data) {
+                var aboutUSFlag = true,
+                aboutUs_ProductsCount = 0;
+                $.each(data.rows, function (idx, obj) {
+                    var model = obj.CategoryName;
+                    switch (model) {
+                        case "产品列表":
+                            if (aboutUs_ProductsCount < 3) {
+                                aboutUs_ProductsCount++;
+                                $("#aboutus_products").append(template('aboutus_products_template', obj));
+                            }
+                            break;
+                        case "关于我们":
+                            if (aboutUSFlag) {
+                                $("#owl-demo").find(".fist-slide").html(template("aboutUS",obj));
+                                aboutUSFlag = false;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                });
+            }
 		}
 	});
 });
