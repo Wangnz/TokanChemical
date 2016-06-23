@@ -25,7 +25,7 @@ $(function(){
                         case "产品列表":
                             if (aboutUs_ProductsCount < 3) {
                                 aboutUs_ProductsCount++;
-                                $("#aboutus_products").append(template('aboutus_products_template', obj));
+                                $("#aboutus_products").prepend(template('aboutus_products_template', obj));
                             }
                             break;
                         case "关于我们":
