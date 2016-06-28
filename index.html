@@ -357,7 +357,6 @@
                         <h3 class="sections-head white">我们的业务网</h3>
                         <h2 class="white">合作伙伴</h2>
                         <div class="small-separator ws"></div>
-                        <p class="white">公司与全球高分子材料领域的多家顶尖公司、研究机构和大学长期合作，吸收融合了日本、俄罗斯、德国、马来西亚、新加坡的高分子技术、橡胶化工技术、机械加工技术、定制生产线集成技术。</p>
                         <div class="row" id="service_boxes">
                             <div class="service_box animaper">
                                 <a name="0" class="animbox">合作伙伴</a>
@@ -375,13 +374,10 @@
                             <div class="serviseslider">
                                 <ul class="slides">
                                     <!-- fist-slide -->
-                                    <li>
+                                    <li id="serviseslider1">
                                         <div class="icon-holder">
                                             <i class="fa fa-trophy fa-2x"></i>
                                         </div>
-                                        <h3><span></span>机构<span></span></h3>
-                                        <h4>技术支持与合作机构</h4>
-                                        <p>华南理工大学、青岛科技大学、上海橡胶制品研究所、哈尔滨工业大学、扬州大学、日本大冢材料科技有限公司、日本瑞翁公司、TOKAN TECHNOLOGY PTE. LTD等。</p>
                                     </li>
                                     <!-- second-slide -->
                                     <li>
@@ -458,9 +454,6 @@
                                                     };
                                                     this.draw = function() {
                                                         // Draw big circle
-                                                        /*ctx.beginPath();
-    	ctx.arc(this.x, this.y, this.r, 0, Math.PI*2, true);
-    	ctx.stroke();*/
                                                         // Update orbital circle position
                                                         if (this.radianCounter <= 2) {
                                                             this.radianCounter += .01;
@@ -489,13 +482,10 @@
                                         </div>
                                     </li>
                                     <!-- third-slide -->
-                                    <li>
+                                    <li id="serviseslider_assets">
                                         <div class="icon-holder">
                                             <i class="fa fa-pencil fa-2x"></i>
                                         </div>
-                                        <h3><span></span>资产概况<span></span></h3>
-                                        <h4>公司投资</h4>
-                                        <p> 公司于2011年正式投产，总投资近3000万元，总资产2800万元，拥有20000平方米生产大楼。公司于2015年1月完成重组，参股机构：风投基金（国内行业领军者）、省国资委与市国资委下属投资企业、知名券商的股权投资平台。</p>
                                     </li>
                                 </ul>
                             </div>
@@ -668,6 +658,18 @@
 	        <p>{{ArticleContent}}</p>
         </div>
 	</script>
+
+	<script id="servises_template" type="text/html">
+        <p class="white">{{ArticleContent}}</p>
+	</script>
+
+	<script id="servises_partner_template" type="text/html">
+        <h3><span></span>{{Title}}<span></span></h3>
+        <h4>{{Intro}}</h4>
+        <p>{{ArticleContent}}</p>
+	</script>
+
+	
 
 </body>
 
